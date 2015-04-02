@@ -1,0 +1,201 @@
+<body>
+    {{> header}}
+    {{> splash}}
+    {{> login}}
+    {{> footer}}
+</body>
+
+<template name="header">
+ <div class="navbar-fixed">
+  <nav>
+    <div class="nav-wrapper">
+      <ul class="right hide-on-med-and-down">
+        <li><a href="/home"><i class="mdi-action-account-balance"></i></a></li>
+        <li><a class="dropdown-button" href="#!" data-activates="dropdown1"><i class="mdi-action-shopping-cart right"></i></a></li>
+      </ul>
+        <a class="flow-text brand-logo center">BASICS</a>
+        <form class="left">
+        <div class="input-field">
+          <input id="search" type="text" required>
+          <label for="search"><i class="mdi-action-search"></i></label>
+        </div>
+      </form>
+    </div>
+  </nav>
+ </div>
+    <ul id='dropdown1' class='dropdown-content'>
+    <ul class="collection">
+    <li class="collection-item avatar">
+      <i class="mdi-av-play-arrow circle red"></i>
+    </li>
+    <li class="collection-item avatar">
+      <i class="mdi-file-folder circle"></i>
+    </li>
+    <li class="collection-item avatar">
+      <i class="mdi-action-assessment circle green"></i>
+    </li>
+    <li class="collection-item avatar">
+      <i class="mdi-av-play-arrow circle red"></i>
+    </li>
+  </ul>
+    </ul>
+</template>
+
+
+<template name= "login">
+      <div id="modal1" class="modal modal-fixed-footer">
+    <div class="modal-content center">
+      <a class="waves-effect waves-light btn-flat modal-action modal-close right"><i class="large mdi-content-clear"></i></a>
+      <div class="container">
+      <i class="large mdi-action-face-unlock"></i>
+      </div>
+      <h4 class="flow-text center-align">Get Started</h4>
+        <div class="container center">
+        <form>
+        <div class="section">
+          <div class="input-field col s12">
+            <input id="first_name" type="text" class="validate">
+            <label for="login_email" class="flow-text">email</label>
+          </div>
+          </div>
+         <div class="section">
+          <div class="input-field col s12">
+            <input id="last_name" type="text" class="validate">
+            <label for="login_password" class="flow-text">password</label>
+          </div>
+        </div>
+         </form>
+        </div>
+        <div class="section">
+        <a class="btn-floating btn-large waves-effect waves-light btn-flat modal-action modal-close teal"><i class="mdi-content-send"></i></a>
+        </div>
+        </div>
+    <div class="modal-footer center">
+      {{>loginButtons}}
+    </div>
+</div>
+    <script>
+         $(document).ready(function(){
+        $('#modal1').openModal();
+        $(".dropdown-button").dropdown({
+            belowOrigin: true,
+            constrain_width: true
+        })
+    });
+    </script>
+</template>
+
+<template name="splash">
+    {{> parallax}}
+<div class="row">
+        <div class="col s12 m4">
+          <div class="icon-block">
+            <h2 class="center light-blue-text"><i class="mdi-image-flash-on"></i></h2>
+            <h5 class="flow-text center">Your Schedule</h5>
+
+            <p class="flow-text light">We did most of the heavy lifting for you to provide a default stylings that incorporate our custom components. Additionally, we refined animations and transitions to provide a smoother experience for developers.</p>
+          </div>
+        </div>
+
+        <div class="col s12 m4">
+          <div class="icon-block">
+            <h2 class="center light-blue-text"><i class="mdi-social-group"></i></h2>
+            <h5 class="flow-text center">Your Products</h5>
+
+            <p class="flow-text light">By utilizing elements and principles of Material Design, we were able to create a framework that incorporates components and animations that provide more feedback to users. Additionally, a single underlying responsive system across all platforms allow for a more unified user experience.</p>
+          </div>
+        </div>
+
+        <div class="col s12 m4">
+          <div class="icon-block">
+            <h2 class="center light-blue-text"><i class="mdi-action-settings"></i></h2>
+            <h5 class="flow-text center">Your Way</h5>
+
+            <p class="flow-text light">We have provided detailed documentation as well as specific code examples to help new users get started. We are also always open to feedback and can answer any questions a user may have about Materialize.</p>
+          </div>
+        </div>
+    </div>
+</template>
+
+<template name="tutorial">
+    <div class="slider fullscreen">
+    <ul class="slides">
+      <li>
+        <img src="images/image1.jpg"> <!-- random image -->
+        <div class="caption center-align">
+          <h3>This is our big Tagline!</h3>
+          <h5 class="light grey-text text-lighten-3">Here's our small slogan.</h5>
+        </div>
+      </li>
+      <li>
+        <img src="images/image2.jpg"> <!-- random image -->
+        <div class="caption left-align">
+          <h3>Left Aligned Caption</h3>
+          <h5 class="light grey-text text-lighten-3">Here's our small slogan.</h5>
+        </div>
+      </li>
+      <li>
+        <img src="images/image3.jpg"> <!-- random image -->
+        <div class="caption right-align">
+          <h3>Right Aligned Caption</h3>
+          <h5 class="light grey-text text-lighten-3">Here's our small slogan.</h5>
+        </div>
+      </li>
+      <li>
+        <img src="images/image4.jpg"> <!-- random image -->
+        <div class="caption center-align">
+          <h3>This is our big Tagline!</h3>
+          <h5 class="light grey-text text-lighten-3">Here's our small slogan.</h5>
+        </div>
+      </li>
+    </ul>
+ </div>
+
+<script>
+     $(document).ready(function(){
+    $('.slider').slider({
+            full_width: true,
+            indicators: false
+        });
+    });
+</script>
+</template>
+
+<template name="parallax">
+     <div class="parallax-container">
+      <div class="parallax"><img src="images/parallax1.jpg"></div>
+    </div>
+  <script>
+    $(document).ready(function(){
+      $('.parallax').parallax();
+    });
+ </script>
+</template>
+
+<template name="footer">
+      <footer class="page-footer">
+          <div class="container">
+            <div class="row">
+              <div class="col l6 s12">
+                <h5 class="white-text">Footer Content</h5>
+                <p class="grey-text text-lighten-4">You can use rows and columns here to organize your footer content.</p>
+              </div>
+              <div class="col l4 offset-l2 s12">
+                <h5 class="white-text">Links</h5>
+                <ul>
+                  <li><a class="grey-text text-lighten-3" href="#!">Link 1</a></li>
+                  <li><a class="grey-text text-lighten-3" href="#!">Link 2</a></li>
+                  <li><a class="grey-text text-lighten-3" href="#!">Link 3</a></li>
+                  <li><a class="grey-text text-lighten-3" href="#!">Link 4</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="footer-copyright">
+            <div class="container">
+            © 2015 Copyright
+            <a class="grey-text text-lighten-4 right" href="#!">More Links</a>
+            </div>
+          </div>
+        </footer>
+</template>
