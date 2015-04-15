@@ -1,8 +1,5 @@
 <body>
-    {{> header}}
-    {{> splash}}
-    {{> login}}
-    {{> footer}}
+ {{> tutorial}}
 </body>
 
 <template name="header">
@@ -155,7 +152,6 @@
      $(document).ready(function(){
     $('.slider').slider({
             full_width: true,
-            indicators: false
         });
     });
 </script>
@@ -163,13 +159,30 @@
 
 <template name="parallax">
      <div class="parallax-container">
-      <div class="parallax"><img src="images/parallax1.jpg"></div>
+      <div class="parallax"><img src="images/wood.png"></div>
     </div>
   <script>
     $(document).ready(function(){
       $('.parallax').parallax();
     });
  </script>
+</template>
+
+<template name="product">
+   <ul class="collapsible popout" data-collapsible="accordion">
+    <li>
+      <div class="collapsible-header"><i class="mdi-image-filter-drama"></i>First</div>
+      <div class="collapsible-body"><p>Lorem ipsum dolor sit amet.</p></div>
+    </li>
+    <li>
+      <div class="collapsible-header"><i class="mdi-maps-place"></i>Second</div>
+      <div class="collapsible-body"><p>Lorem ipsum dolor sit amet.</p></div>
+    </li>
+    <li>
+      <div class="collapsible-header"><i class="mdi-social-whatshot"></i>Third</div>
+      <div class="collapsible-body"><p>Lorem ipsum dolor sit amet.</p></div>
+    </li>
+  </ul>
 </template>
 
 <template name="footer">
